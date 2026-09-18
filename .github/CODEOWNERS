@@ -1,0 +1,5 @@
+# Code owners are requested for review automatically on every pull request.
+# Enable "Require review from Code Owners" in the main branch ruleset to make it mandatory.
+# (Only people with write access can be code owners; learners' forks ignore this file.)
+
+*       @vin2k20

@@ -89,3 +89,27 @@ Repository settings to enable after publishing:
 
 The `Scaffold health` workflow only runs on the original repository (`if: github.repository == …`), because learners' copies will
 (correctly) contain code, and the health check would fail there.
+
+### Protecting `main`
+Nobody outside the project can push to this repository: GitHub only grants write access to the owner and invited collaborators.
+Everyone else forks and opens a pull request. On top of that, these settings protect `main` from accidents and from untrusted CI:
+
+**Settings → Rules → Rulesets → New branch ruleset** (name: `protect main`, Enforcement: Active, Target: default branch)
+- ✔ Restrict deletions
+- ✔ Block force pushes
+- ✔ Require a pull request before merging → 1 approval · ✔ Dismiss stale approvals · ✔ Require review from Code Owners
+- ✔ Require status checks to pass → **Scaffold health** (+ ✔ Require branches to be up to date)
+- ✔ Require conversation resolution before merging
+- ✔ Require linear history (optional, keeps the history readable)
+- Bypass list: add **Repository admin** if you want to keep pushing small doc fixes directly; leave it empty to hold yourself to the same rules.
+
+**Settings → Actions → General**
+- Fork pull request workflows from outside collaborators: **Require approval for all external contributors**
+- Workflow permissions: **Read repository contents and packages permissions**
+- ✗ Allow GitHub Actions to create and approve pull requests
+
+**Settings → Code security**
+- ✔ Secret scanning and ✔ Push protection · ✔ Dependabot alerts and security updates · ✔ Private vulnerability reporting
+
+**Account**
+- Keep two-factor authentication on, don't add collaborators you don't need, and review the fork PR diff before approving its workflow run.
