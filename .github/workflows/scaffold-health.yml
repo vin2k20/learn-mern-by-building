@@ -17,6 +17,8 @@ concurrency:
 
 jobs:
   verify:
+    # This name is what appears as the required status check in branch rulesets.
+    name: Scaffold health
     if: github.repository == 'vin2k20/learn-mern-by-building'
     runs-on: ubuntu-latest
     steps:
