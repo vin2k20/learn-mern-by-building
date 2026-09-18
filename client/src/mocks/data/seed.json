@@ -1,0 +1,668 @@
+{
+  "users": [
+    {
+      "id": "u_001",
+      "name": "Demo User",
+      "email": "demo@kanvas.dev",
+      "role": "admin",
+      "avatarColor": "#5b5bd6"
+    },
+    {
+      "id": "u_002",
+      "name": "Asha Rao",
+      "email": "asha@kanvas.dev",
+      "role": "member",
+      "avatarColor": "#1f9d6b"
+    },
+    {
+      "id": "u_003",
+      "name": "Ravi Menon",
+      "email": "ravi@kanvas.dev",
+      "role": "member",
+      "avatarColor": "#c77d0a"
+    },
+    {
+      "id": "u_004",
+      "name": "Meera Iyer",
+      "email": "meera@kanvas.dev",
+      "role": "member",
+      "avatarColor": "#d6405b"
+    }
+  ],
+  "projects": [
+    {
+      "id": "p_001",
+      "name": "Website redesign",
+      "description": "Refresh the marketing site and app shell with the new design system.",
+      "color": "#5b5bd6",
+      "ownerId": "u_001",
+      "memberIds": [
+        "u_001",
+        "u_002",
+        "u_003",
+        "u_004"
+      ],
+      "createdAt": "2026-08-18T09:00:00.000Z",
+      "updatedAt": "2026-09-16T12:30:00.000Z"
+    },
+    {
+      "id": "p_002",
+      "name": "Mobile app v2",
+      "description": "Offline-first rewrite of the companion app with push notifications.",
+      "color": "#1f9d6b",
+      "ownerId": "u_002",
+      "memberIds": [
+        "u_001",
+        "u_002",
+        "u_004"
+      ],
+      "createdAt": "2026-08-25T10:15:00.000Z",
+      "updatedAt": "2026-09-15T08:05:00.000Z"
+    },
+    {
+      "id": "p_003",
+      "name": "Infra & CI",
+      "description": "GitHub Actions pipeline, Docker images and Lighthouse budgets.",
+      "color": "#c77d0a",
+      "ownerId": "u_003",
+      "memberIds": [
+        "u_001",
+        "u_003"
+      ],
+      "createdAt": "2026-09-01T07:45:00.000Z",
+      "updatedAt": "2026-09-14T17:20:00.000Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t_001",
+      "projectId": "p_001",
+      "title": "Audit current landing page",
+      "description": "List layout, accessibility and performance issues on the current site.",
+      "status": "done",
+      "priority": "medium",
+      "assigneeId": "u_002",
+      "labels": [
+        "research"
+      ],
+      "order": 1000,
+      "estimate": 2,
+      "dependsOn": [],
+      "dueDate": null,
+      "createdAt": "2026-08-19T09:00:00.000Z",
+      "updatedAt": "2026-08-22T16:00:00.000Z",
+      "completedAt": "2026-08-22T16:00:00.000Z"
+    },
+    {
+      "id": "t_002",
+      "projectId": "p_001",
+      "title": "Login form",
+      "description": "Email + password form with validation, loading and error states.",
+      "status": "in_progress",
+      "priority": "high",
+      "assigneeId": "u_001",
+      "labels": [
+        "auth",
+        "ui"
+      ],
+      "order": 1000,
+      "estimate": 3,
+      "dependsOn": [
+        "t_006"
+      ],
+      "dueDate": "2026-09-20T00:00:00.000Z",
+      "createdAt": "2026-08-20T10:00:00.000Z",
+      "updatedAt": "2026-08-20T10:00:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_003",
+      "projectId": "p_001",
+      "title": "Hero section",
+      "description": "Responsive hero with animated board mock-up.",
+      "status": "todo",
+      "priority": "medium",
+      "assigneeId": "u_002",
+      "labels": [
+        "ui"
+      ],
+      "order": 2000,
+      "estimate": 2,
+      "dependsOn": [
+        "t_001"
+      ],
+      "dueDate": "2026-09-24T00:00:00.000Z",
+      "createdAt": "2026-08-21T11:30:00.000Z",
+      "updatedAt": "2026-08-21T11:30:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_004",
+      "projectId": "p_001",
+      "title": "Design tokens",
+      "description": "Colour, type, spacing and motion tokens for light and dark.",
+      "status": "done",
+      "priority": "high",
+      "assigneeId": "u_004",
+      "labels": [
+        "design-system"
+      ],
+      "order": 2000,
+      "estimate": 3,
+      "dependsOn": [],
+      "dueDate": null,
+      "createdAt": "2026-08-19T13:00:00.000Z",
+      "updatedAt": "2026-08-27T12:00:00.000Z",
+      "completedAt": "2026-08-27T12:00:00.000Z"
+    },
+    {
+      "id": "t_005",
+      "projectId": "p_001",
+      "title": "Fix CLS on hero image",
+      "description": "Add width/height and fetchpriority to the LCP image.",
+      "status": "review",
+      "priority": "urgent",
+      "assigneeId": "u_003",
+      "labels": [
+        "performance"
+      ],
+      "order": 1000,
+      "estimate": 1,
+      "dependsOn": [],
+      "dueDate": "2026-09-18T00:00:00.000Z",
+      "createdAt": "2026-09-12T15:00:00.000Z",
+      "updatedAt": "2026-09-12T15:00:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_006",
+      "projectId": "p_001",
+      "title": "Auth API integration",
+      "description": "Wire the login endpoint and token storage.",
+      "status": "done",
+      "priority": "high",
+      "assigneeId": "u_003",
+      "labels": [
+        "auth",
+        "backend"
+      ],
+      "order": 3000,
+      "estimate": 5,
+      "dependsOn": [],
+      "dueDate": null,
+      "createdAt": "2026-08-22T09:30:00.000Z",
+      "updatedAt": "2026-09-05T18:00:00.000Z",
+      "completedAt": "2026-09-05T18:00:00.000Z"
+    },
+    {
+      "id": "t_007",
+      "projectId": "p_001",
+      "title": "Pricing cards",
+      "description": "Three plans; featured plan scaled on desktop.",
+      "status": "todo",
+      "priority": "low",
+      "assigneeId": "u_004",
+      "labels": [
+        "ui"
+      ],
+      "order": 3000,
+      "estimate": 2,
+      "dependsOn": [
+        "t_004"
+      ],
+      "dueDate": null,
+      "createdAt": "2026-08-28T14:00:00.000Z",
+      "updatedAt": "2026-08-28T14:00:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_008",
+      "projectId": "p_001",
+      "title": "Command palette",
+      "description": "Cmd/Ctrl+K palette with Trie + fuzzy search.",
+      "status": "in_progress",
+      "priority": "medium",
+      "assigneeId": "u_001",
+      "labels": [
+        "search",
+        "a11y"
+      ],
+      "order": 2000,
+      "estimate": 5,
+      "dependsOn": [],
+      "dueDate": "2026-09-26T00:00:00.000Z",
+      "createdAt": "2026-09-02T09:00:00.000Z",
+      "updatedAt": "2026-09-02T09:00:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_009",
+      "projectId": "p_001",
+      "title": "Keyboard drag & drop",
+      "description": "Space to grab, arrows to move, Space to drop.",
+      "status": "todo",
+      "priority": "high",
+      "assigneeId": null,
+      "labels": [
+        "a11y"
+      ],
+      "order": 1000,
+      "estimate": 3,
+      "dependsOn": [
+        "t_008"
+      ],
+      "dueDate": null,
+      "createdAt": "2026-09-03T12:00:00.000Z",
+      "updatedAt": "2026-09-03T12:00:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_010",
+      "projectId": "p_001",
+      "title": "Dark mode QA",
+      "description": "Check contrast of every token pair.",
+      "status": "review",
+      "priority": "medium",
+      "assigneeId": "u_002",
+      "labels": [
+        "design-system",
+        "qa"
+      ],
+      "order": 2000,
+      "estimate": 1,
+      "dependsOn": [
+        "t_004"
+      ],
+      "dueDate": "2026-09-19T00:00:00.000Z",
+      "createdAt": "2026-09-08T10:45:00.000Z",
+      "updatedAt": "2026-09-08T10:45:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_011",
+      "projectId": "p_001",
+      "title": "Activity feed virtualization",
+      "description": "Render 10k rows smoothly.",
+      "status": "todo",
+      "priority": "medium",
+      "assigneeId": "u_003",
+      "labels": [
+        "performance"
+      ],
+      "order": 4000,
+      "estimate": 3,
+      "dependsOn": [],
+      "dueDate": "2026-09-30T00:00:00.000Z",
+      "createdAt": "2026-09-09T08:20:00.000Z",
+      "updatedAt": "2026-09-09T08:20:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_012",
+      "projectId": "p_001",
+      "title": "Write e2e smoke test",
+      "description": "Login → create project → move a card.",
+      "status": "todo",
+      "priority": "low",
+      "assigneeId": null,
+      "labels": [
+        "qa"
+      ],
+      "order": 5000,
+      "estimate": 2,
+      "dependsOn": [
+        "t_002"
+      ],
+      "dueDate": null,
+      "createdAt": "2026-09-11T16:00:00.000Z",
+      "updatedAt": "2026-09-11T16:00:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_013",
+      "projectId": "p_002",
+      "title": "Offline sync spike",
+      "description": "Evaluate IndexedDB queue + background sync.",
+      "status": "in_progress",
+      "priority": "high",
+      "assigneeId": "u_002",
+      "labels": [
+        "research",
+        "offline"
+      ],
+      "order": 1000,
+      "estimate": 5,
+      "dependsOn": [],
+      "dueDate": "2026-09-22T00:00:00.000Z",
+      "createdAt": "2026-08-26T09:00:00.000Z",
+      "updatedAt": "2026-08-26T09:00:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_014",
+      "projectId": "p_002",
+      "title": "Service worker caching",
+      "description": "Choose caching strategies per route.",
+      "status": "todo",
+      "priority": "medium",
+      "assigneeId": "u_004",
+      "labels": [
+        "offline",
+        "performance"
+      ],
+      "order": 1000,
+      "estimate": 3,
+      "dependsOn": [
+        "t_013"
+      ],
+      "dueDate": null,
+      "createdAt": "2026-08-27T10:00:00.000Z",
+      "updatedAt": "2026-08-27T10:00:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_015",
+      "projectId": "p_002",
+      "title": "Push notification opt-in",
+      "description": "Ask at the right moment, not on first load.",
+      "status": "todo",
+      "priority": "low",
+      "assigneeId": "u_001",
+      "labels": [
+        "ui"
+      ],
+      "order": 2000,
+      "estimate": 2,
+      "dependsOn": [],
+      "dueDate": null,
+      "createdAt": "2026-08-29T13:30:00.000Z",
+      "updatedAt": "2026-08-29T13:30:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_016",
+      "projectId": "p_002",
+      "title": "Bottom tab bar",
+      "description": "Mobile navigation with safe-area insets.",
+      "status": "done",
+      "priority": "medium",
+      "assigneeId": "u_004",
+      "labels": [
+        "ui"
+      ],
+      "order": 1000,
+      "estimate": 2,
+      "dependsOn": [],
+      "dueDate": null,
+      "createdAt": "2026-08-26T15:00:00.000Z",
+      "updatedAt": "2026-09-03T11:00:00.000Z",
+      "completedAt": "2026-09-03T11:00:00.000Z"
+    },
+    {
+      "id": "t_017",
+      "projectId": "p_002",
+      "title": "Crash reporting",
+      "description": "Source maps upload + release tagging.",
+      "status": "review",
+      "priority": "high",
+      "assigneeId": "u_001",
+      "labels": [
+        "observability"
+      ],
+      "order": 1000,
+      "estimate": 2,
+      "dependsOn": [],
+      "dueDate": "2026-09-21T00:00:00.000Z",
+      "createdAt": "2026-09-04T09:10:00.000Z",
+      "updatedAt": "2026-09-04T09:10:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_018",
+      "projectId": "p_002",
+      "title": "Onboarding carousel",
+      "description": "Swipeable, respects reduced motion.",
+      "status": "todo",
+      "priority": "low",
+      "assigneeId": "u_002",
+      "labels": [
+        "ui"
+      ],
+      "order": 3000,
+      "estimate": 3,
+      "dependsOn": [],
+      "dueDate": null,
+      "createdAt": "2026-09-06T12:00:00.000Z",
+      "updatedAt": "2026-09-06T12:00:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_019",
+      "projectId": "p_002",
+      "title": "App icon & splash",
+      "description": "Adaptive icons for all densities.",
+      "status": "done",
+      "priority": "low",
+      "assigneeId": "u_004",
+      "labels": [
+        "design-system"
+      ],
+      "order": 2000,
+      "estimate": 1,
+      "dependsOn": [],
+      "dueDate": null,
+      "createdAt": "2026-08-27T08:00:00.000Z",
+      "updatedAt": "2026-08-30T10:30:00.000Z",
+      "completedAt": "2026-08-30T10:30:00.000Z"
+    },
+    {
+      "id": "t_020",
+      "projectId": "p_002",
+      "title": "Deep links",
+      "description": "Open tasks directly from notifications.",
+      "status": "in_progress",
+      "priority": "medium",
+      "assigneeId": "u_001",
+      "labels": [
+        "routing"
+      ],
+      "order": 2000,
+      "estimate": 3,
+      "dependsOn": [
+        "t_016"
+      ],
+      "dueDate": "2026-09-25T00:00:00.000Z",
+      "createdAt": "2026-09-07T14:40:00.000Z",
+      "updatedAt": "2026-09-07T14:40:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_021",
+      "projectId": "p_003",
+      "title": "CI pipeline for client",
+      "description": "Lint, test, build with npm cache.",
+      "status": "in_progress",
+      "priority": "high",
+      "assigneeId": "u_003",
+      "labels": [
+        "ci"
+      ],
+      "order": 1000,
+      "estimate": 3,
+      "dependsOn": [],
+      "dueDate": "2026-09-19T00:00:00.000Z",
+      "createdAt": "2026-09-02T09:00:00.000Z",
+      "updatedAt": "2026-09-02T09:00:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_022",
+      "projectId": "p_003",
+      "title": "Dockerize API",
+      "description": "Multi-stage image, non-root user, healthcheck.",
+      "status": "todo",
+      "priority": "medium",
+      "assigneeId": "u_003",
+      "labels": [
+        "docker",
+        "backend"
+      ],
+      "order": 1000,
+      "estimate": 3,
+      "dependsOn": [],
+      "dueDate": null,
+      "createdAt": "2026-09-03T10:00:00.000Z",
+      "updatedAt": "2026-09-03T10:00:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_023",
+      "projectId": "p_003",
+      "title": "Lighthouse budgets",
+      "description": "Fail PRs when performance < 0.9.",
+      "status": "todo",
+      "priority": "medium",
+      "assigneeId": "u_001",
+      "labels": [
+        "performance",
+        "ci"
+      ],
+      "order": 2000,
+      "estimate": 2,
+      "dependsOn": [
+        "t_021"
+      ],
+      "dueDate": null,
+      "createdAt": "2026-09-05T11:00:00.000Z",
+      "updatedAt": "2026-09-05T11:00:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "t_024",
+      "projectId": "p_003",
+      "title": "Dependabot config",
+      "description": "Weekly updates grouped by ecosystem.",
+      "status": "done",
+      "priority": "low",
+      "assigneeId": "u_003",
+      "labels": [
+        "security"
+      ],
+      "order": 1000,
+      "estimate": 1,
+      "dependsOn": [],
+      "dueDate": null,
+      "createdAt": "2026-09-02T08:00:00.000Z",
+      "updatedAt": "2026-09-04T09:00:00.000Z",
+      "completedAt": "2026-09-04T09:00:00.000Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "c_001",
+      "taskId": "t_002",
+      "authorId": "u_002",
+      "body": "Should we support magic-link login as well?",
+      "createdAt": "2026-09-10T11:02:00.000Z"
+    },
+    {
+      "id": "c_002",
+      "taskId": "t_002",
+      "authorId": "u_001",
+      "body": "Not for v1. Email + password with good error states first.",
+      "createdAt": "2026-09-10T11:20:00.000Z"
+    },
+    {
+      "id": "c_003",
+      "taskId": "t_005",
+      "authorId": "u_003",
+      "body": "Lighthouse shows CLS 0.18 on the hero; the image has no dimensions.",
+      "createdAt": "2026-09-12T15:40:00.000Z"
+    },
+    {
+      "id": "c_004",
+      "taskId": "t_014",
+      "authorId": "u_004",
+      "body": "Service worker caching strategy: network-first for API, cache-first for assets?",
+      "createdAt": "2026-09-13T09:12:00.000Z"
+    },
+    {
+      "id": "c_005",
+      "taskId": "t_021",
+      "authorId": "u_001",
+      "body": "Let's cache ~/.npm keyed on the lockfile hash.",
+      "createdAt": "2026-09-14T16:55:00.000Z"
+    }
+  ],
+  "drawings": [
+    {
+      "id": "d_001",
+      "projectId": "p_001",
+      "updatedAt": "2026-09-15T10:00:00.000Z",
+      "shapes": [
+        {
+          "id": "s_001",
+          "type": "rect",
+          "x": 80,
+          "y": 60,
+          "w": 220,
+          "h": 120,
+          "stroke": "#5b5bd6",
+          "fill": null,
+          "strokeWidth": 3
+        },
+        {
+          "id": "s_002",
+          "type": "ellipse",
+          "x": 360,
+          "y": 70,
+          "w": 160,
+          "h": 100,
+          "stroke": "#1f9d6b",
+          "fill": null,
+          "strokeWidth": 3
+        },
+        {
+          "id": "s_003",
+          "type": "line",
+          "x": 300,
+          "y": 120,
+          "w": 60,
+          "h": 0,
+          "stroke": "#161a26",
+          "fill": null,
+          "strokeWidth": 2
+        },
+        {
+          "id": "s_004",
+          "type": "pen",
+          "points": [
+            [
+              100,
+              240
+            ],
+            [
+              130,
+              230
+            ],
+            [
+              160,
+              250
+            ],
+            [
+              190,
+              235
+            ],
+            [
+              220,
+              255
+            ]
+          ],
+          "stroke": "#d6405b",
+          "fill": null,
+          "strokeWidth": 4
+        }
+      ]
+    }
+  ]
+}

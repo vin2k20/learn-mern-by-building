@@ -1,0 +1,59 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 landing/css/layout.css · Phase 1 · Day 6 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🎯 GOAL
+ *   Lay out every section. Use FLEXBOX where content flows in one direction and
+ *   GRID where you need rows AND columns. (Write MOBILE styles here; responsive.css adds the breakpoints.)
+ *
+ * 🧠 CONCEPTS  → docs/concepts/css/flexbox.md, docs/concepts/css/grid.md
+ *
+ * 📝 STEPS (everything inside @layer layout { … })
+ *   1. .container: width: min(100% - 2 * var(--space-5), var(--content-max)); margin-inline: auto;
+ *   2. Header (FLEXBOX)
+ *      - header: position: sticky; top: 0; z-index: var(--z-header); a translucent background with backdrop-filter
+ *      - .header-inner: display: flex; align-items: center; gap: var(--space-4)
+ *      - push the actions to the end with margin-inline-start: auto
+ *      - mobile: the nav <ul> is hidden (display: none) unless the header has [data-menu-open] (set by JS),
+ *        in which case it becomes a vertical flex column below the header
+ *   3. Hero (GRID)
+ *      - .hero: display: grid; gap: var(--space-7); align-items: center; padding-block: var(--space-8)
+ *      - mobile: one column (text, then the mock-up)
+ *      - .hero-actions: display: flex; flex-wrap: wrap; gap: var(--space-3). On mobile the buttons take the full width (flex: 1 1 100%)
+ *      - The board mock-up: a GRID of 3 columns (grid-template-columns: repeat(3, 1fr)); each column is a FLEX column of cards
+ *   4. Features (GRID, no media query needed)
+ *      - .feature-grid: display: grid; gap: var(--space-5);
+ *        grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+ *      - reset the list styles (list-style: none; padding: 0)
+ *   5. Steps: an <ol> as a grid with CSS counters (counter-reset / counter-increment / ::before content) ☆
+ *   6. Pricing (GRID with named areas)
+ *      - mobile: grid-template-areas: "team" "free" "business" (featured FIRST on mobile. Discuss the a11y
+ *        implications: the visual order differs from the DOM order, so keep the DOM order sensible)
+ *      - each .plan is itself a grid: grid-template-rows: auto auto 1fr auto so the CTA buttons line up at the bottom
+ *      - ☆ subgrid: .pricing-grid defines rows and each .plan uses grid-row: span 4; grid-template-rows: subgrid
+ *   7. Testimonials (FLEXBOX marquee track)
+ *      - .marquee: overflow: hidden; a mask-image gradient to fade the edges
+ *      - .marquee-track: display: flex; gap; width: max-content (animations.css will move it)
+ *      - figure cards: flex: 0 0 18rem
+ *   8. FAQ: max-width 65ch, centred. Style summary::marker or use a custom chevron via ::after.
+ *   9. Contact form (GRID)
+ *      - form: display: grid; gap: var(--space-4). On mobile, one column.
+ *      - .field-full: grid-column: 1 / -1 (the message, consent and submit fields span every column later)
+ *  10. Footer: GRID with auto-fit columns for the link groups; the bottom bar is FLEX with space-between.
+ *
+ * ✅ DONE WHEN
+ *   [ ] At 360px: no horizontal scrollbar (check with document.documentElement.scrollWidth in the console)
+ *   [ ] The feature cards re-flow from 1 → 2 → 3 columns just by resizing, with NO media query
+ *   [ ] The pricing CTAs are aligned on one line even when the plans have different numbers of features
+ *   [ ] You can explain why you chose flex or grid for every block
+ *
+ * 💡 HINTS  DevTools shows grid/flex overlays: click the "grid"/"flex" badge next to an element in the Elements panel.
+ *
+ * ⚠️ GOTCHAS
+ *   - Grid and flex children default to min-width: auto, so long words overflow. Add min-width: 0 where needed.
+ *   - `order` / grid-area re-ordering doesn't change the tab order.
+ *
+ * 🎤 INTERVIEW ANGLE  "Flexbox vs Grid?", "auto-fit vs auto-fill?", "what is subgrid?"
+ * 🤖 ASK THE AGENT    /explain grid-template-areas · /hint landing/css/layout.css step 6
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

@@ -1,0 +1,6 @@
+/**
+ * 📄 client/src/features/settings/SettingsPage.module.css · ★ core
+ * 📝 .row: display: grid; gap; grid-template-columns: 1fr; @media (min-width: 48rem) → grid-template-columns: 1fr auto; align-items: center
+ *    .segmented (the radio group for the theme): a FLEX pill with visually custom radios; :has(input:checked) highlights the chosen option
+ *    .card sections separated by borders; max-width: 48rem
+ */

@@ -1,0 +1,48 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 landing/css/components.css · Phase 1 · Day 6 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🎯 GOAL
+ *   Reusable, accessible component styles using BEM naming, with every state covered
+ *   (hover, focus-visible, active, disabled, invalid).
+ *
+ * 🧠 CONCEPTS  → docs/concepts/css/css-architecture.md, docs/concepts/web/accessibility.md
+ *   BEM · component-scoped custom properties · :has() · :user-invalid · accent-color
+ *
+ * 📝 STEPS (inside @layer components { … })
+ *   1. .btn block with local custom properties:
+ *        --btn-bg, --btn-fg, --btn-border. Variants only change the variables:
+ *        .btn--primary, .btn--ghost, .btn--lg
+ *      - display: inline-flex; align-items: center; justify-content: center; gap; min-height: 2.75rem (a touch target)
+ *      - :hover → a slightly darker background (color-mix(in oklab, var(--btn-bg), black 10%))
+ *      - :active → transform: translateY(1px)
+ *      - :focus-visible → the focus ring from base.css (don't remove it!)
+ *      - [aria-disabled="true"], :disabled → reduced opacity, cursor: not-allowed
+ *   2. .card block: surface background, border, radius, padding, shadow-1.
+ *      .card__icon, .card__title, .card__body elements.
+ *      - .card:has(a:focus-visible) → show the focus ring on the whole card ☆
+ *   3. .plan (pricing card): .plan__price uses a big number with the currency smaller (font-size and vertical-align).
+ *      .plan[data-featured="true"] → primary border, a .plan__badge ("Most popular") positioned absolutely at the top.
+ *   4. .badge / .pill: inline-flex, radius-pill, small uppercase text.
+ *   5. Forms
+ *      - .field: a grid with the label above the control, and gap var(--space-2)
+ *      - inputs, select, textarea: full width, padding, border, radius; :focus-visible uses the ring
+ *      - invalid state ONLY after user interaction: :user-invalid (plus a .is-invalid class set by JS as a fallback)
+ *        → the border turns the danger colour, and .field-error shows
+ *      - .field:has(:user-invalid) .field-error { display: block }  (a :has() demo)
+ *      - checkbox: accent-color: var(--color-primary); 1.25rem size
+ *   6. .testimonial figure: quote marks via blockquote::before (content: "“"), an avatar circle made with initials
+ *   7. details/summary FAQ items: a border-bottom, a rotating chevron (details[open] summary::after { rotate: 180deg })
+ *   8. .theme-toggle: an icon button that shows ☀/☾ based on [aria-pressed]
+ *
+ * ✅ DONE WHEN
+ *   [ ] Every interactive element has hover, focus-visible and active styles
+ *   [ ] Error styles only appear after the user has interacted with a field (not on page load)
+ *   [ ] Components only use tokens (no raw hex values)
+ *
+ * 💡 HINTS  color-mix() · :user-invalid · :has() · inset / translate for positioning the badge
+ * ⚠️ GOTCHAS  An `outline: none` without a replacement is an accessibility bug.
+ * 🎤 INTERVIEW ANGLE  "How do you structure component CSS?", "what does :has() enable?"
+ * 🤖 ASK THE AGENT    /review landing/css/components.css
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

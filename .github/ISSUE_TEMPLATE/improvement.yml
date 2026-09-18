@@ -1,0 +1,24 @@
+name: 💡 Improvement or new content
+description: Suggest a new lab, primer, stretch goal, interview question or feature for the learning path
+title: "[idea]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: What would you add or change, and what would learners gain from it?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [JavaScript labs, HTML/CSS, React client, Redux / data, Node / Express / MongoDB, Testing, DevOps, Interview prep, AI tutor, Docs / tooling, Other]
+    validations:
+      required: true
+  - type: dropdown
+    id: help
+    attributes:
+      label: Would you like to work on it?
+      options: ["Yes", "Maybe, with guidance", "No, just suggesting"]

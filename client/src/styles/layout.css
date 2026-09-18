@@ -1,0 +1,25 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/styles/layout.css · Phase 3 · Day 3 (+ Day 6 responsive pass) · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🎯 GOAL
+ *   Global layout primitives (composable FLEX and GRID helpers) and page-level patterns that many features share.
+ *   (The app shell itself lives in app/AppLayout.module.css.)
+ *
+ * 🧠 CONCEPTS  → docs/concepts/css/flexbox.md, docs/concepts/css/grid.md, docs/concepts/css/media-and-container-queries.md
+ *
+ * 📝 STEPS
+ *   1. .stack (a vertical FLEX column with gap: var(--stack-gap, var(--space-4)))
+ *   2. .cluster (FLEX row, wrap, align center, gap) for toolbars, tag lists and button groups
+ *   3. .split (FLEX with space-between) for page headers: a title on the left, actions on the right;
+ *      it wraps under 40rem
+ *   4. .auto-grid (GRID: repeat(auto-fill, minmax(min(var(--min, 16rem), 100%), 1fr))) for project cards
+ *   5. .page: max-width var(--content-max) and a container-type: inline-size so feature CSS can use @container
+ *   6. .page-header: sticky under the app header on large screens only (@media (min-width: 64rem))
+ *   7. Day 6 responsive pass: open each route at 360 / 768 / 1024 / 1440 and fix anything that
+ *      overflows here or in the feature module CSS. Record what you fixed in PROGRESS.md.
+ *
+ * ✅ DONE WHEN  [ ] The primitives are used by at least 3 features · [ ] no horizontal scroll at 360px on any route
+ * 🎤 INTERVIEW ANGLE  "How do you avoid one-off layout CSS in a large app?"
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

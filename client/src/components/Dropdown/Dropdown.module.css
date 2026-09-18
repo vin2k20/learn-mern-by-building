@@ -1,0 +1,6 @@
+/**
+ * 📄 client/src/components/Dropdown/Dropdown.module.css · ☆ stretch
+ * 📝 .root { position: relative } · .menu: surface, shadow-2, radius, min-width 12rem, z-index token, a scale-in animation
+ *    with transform-origin at the top · .item: a FLEX row, and [data-highlighted] / :focus-visible backgrounds · .separator
+ * ☆ Flip above the trigger when there isn't enough space (position-try-fallbacks with anchor positioning).
+ */

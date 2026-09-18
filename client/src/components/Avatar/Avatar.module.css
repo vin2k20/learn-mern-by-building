@@ -1,0 +1,5 @@
+/**
+ * 📄 client/src/components/Avatar/Avatar.module.css · ☆ stretch
+ * 📝 .avatar: inline-grid; place-items: center; aspect-ratio: 1; border-radius: 50%; font-weight 600; size via [data-size]
+ *    .group: display: flex; .group > * + * { margin-inline-start: -0.5rem } · box-shadow: 0 0 0 2px var(--color-surface)
+ */

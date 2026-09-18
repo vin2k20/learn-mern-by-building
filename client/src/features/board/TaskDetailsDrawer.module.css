@@ -1,0 +1,16 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/features/board/TaskDetailsDrawer.module.css · Phase 4 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📝 STEPS
+ *   1. .drawer (desktop ≥ 64rem): position: fixed; inset-block: var(--header-h) 0; inset-inline-end: 0; width: min(28rem, 40vw);
+ *      a GRID with rows auto 1fr auto; surface; shadow-3; z-index: var(--z-drawer)
+ *   2. [data-state="open"] → animation: slide-in-right var(--duration-base) var(--ease-out)
+ *      [data-state="closing"] → animation: slide-out-right var(--duration-fast) var(--ease-in) forwards
+ *   3. The form layout: a GRID with two columns for the short fields (status | priority, estimate | due date), and one column for the rest
+ *   4. The inline-editable title: looks like an h2 until focused, then gets an input border
+ *   5. Mobile: this CSS isn't used (the Modal bottom sheet takes over), or use a media query to turn it into a full-screen sheet
+ *   6. Reduced motion → a fade instead of a slide
+ * ✅ DONE WHEN  [ ] The slide animations only use transform (no layout jank)
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

@@ -1,0 +1,23 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+📄 labs/10-canvas/playground/index.html · Phase 2 · Day 2 · ☆ stretch
+═══════════════════════════════════════════════════════════════════════════════
+🎯 GOAL
+  The page for the canvas playground. Serve it with `npm run serve:10`.
+
+📝 STEPS
+  1. The HTML5 boilerplate (lang, charset, viewport, title).
+  2. A toolbar (<div role="toolbar" aria-label="Canvas tools">) with buttons:
+     Particles ▶/⏸ · Draw · Select · Clear · Download PNG. Mark the active tool with aria-pressed.
+  3. A <div class="stage"> containing <canvas id="canvas">…fallback text…</canvas>.
+     The fallback text is read by screen readers and shown when canvas isn't supported.
+  4. Inline <style>: .stage fills the viewport below the toolbar (height: calc(100dvh - toolbar height)),
+     canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+     (touch-action: none stops the page from scrolling while you draw on touch screens.)
+  5. <script type="module" src="app.js"></script>
+
+✅ DONE WHEN
+  [ ] The canvas fills the stage at any window size, with no scrollbars
+🤖 ASK THE AGENT  /explain touch-action pointer events
+═══════════════════════════════════════════════════════════════════════════════
+-->

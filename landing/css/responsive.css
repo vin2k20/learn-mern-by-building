@@ -1,0 +1,54 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 landing/css/responsive.css · Phase 1 · Day 6 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🎯 GOAL
+ *   Mobile-first MEDIA QUERIES that progressively enhance the layout, CONTAINER QUERIES
+ *   for cards, user-preference queries, and print styles.
+ *
+ * 🧠 CONCEPTS  → docs/concepts/css/media-and-container-queries.md
+ *
+ * 📝 STEPS (put these inside @layer layout or @layer components so they override the base styles in the same layer)
+ *   1. @media (min-width: 40rem)   /* sm, ≥ 640px *\/
+ *      - .hero-actions buttons: no longer full width (flex: 0 0 auto)
+ *      - contact form: grid-template-columns: 1fr 1fr (name | email), the message spans both columns
+ *      - pricing: two columns
+ *   2. @media (min-width: 48rem)   /* md, ≥ 768px *\/
+ *      - .steps: three columns in a row
+ *      - footer: link groups side by side
+ *   3. @media (min-width: 64rem)   /* lg, ≥ 1024px *\/
+ *      - show the nav inline (display: flex) and hide the menu toggle button
+ *      - .hero: grid-template-columns: 1.1fr 1fr (text | mock-up)
+ *      - pricing: grid-template-columns: repeat(3, 1fr); grid-template-areas: "free team business";
+ *        the featured plan gets a slight scale (transform: scale(1.04))
+ *   4. @media (min-width: 80rem)   /* xl, ≥ 1280px *\/
+ *      - increase the section padding-block; the hero mock-up gets bigger
+ *   5. Pointer & hover
+ *      - @media (hover: hover) and (pointer: fine) → only here add the hover "lift" effect on cards
+ *      - @media (pointer: coarse) → larger tap targets for nav links (min-height: 44px)
+ *   6. Container queries
+ *      - .feature-grid > li { container-type: inline-size; }
+ *      - @container (min-width: 22rem) → .card switches to a horizontal layout (the icon on the left)
+ *   7. Orientation: @media (orientation: landscape) and (max-height: 30rem) → reduce the hero padding
+ *      (phones in landscape)
+ *   8. Preferences
+ *      - @media (prefers-contrast: more) → thicker borders, no translucent header
+ *      - (reduced motion is handled in animations.css)
+ *   9. Print: @media print → hide the header, nav, marquee, form and theme toggle; black text on white;
+ *      show link URLs with a[href^="http"]::after { content: " (" attr(href) ")" }
+ *
+ * ✅ DONE WHEN
+ *   [ ] The layouts at 360 / 768 / 1024 / 1440 match the wireframes
+ *   [ ] Print preview (Cmd+P) looks like a clean document
+ *   [ ] The feature cards switch to horizontal based on THEIR width (try a narrow window at 1024px where the grid has 3 columns)
+ *
+ * 💡 HINTS  DevTools → Rendering → "Emulate CSS media feature" for prefers-* and print.
+ *
+ * ⚠️ GOTCHAS
+ *   - Closing comments inside comments: the `*\/` in this block is escaped on purpose. Write normal comments in your code.
+ *   - Container query units (cqi) only work inside a container.
+ *
+ * 🎤 INTERVIEW ANGLE  "Mobile-first vs desktop-first?", "container vs media queries?", "how do you test responsiveness?"
+ * 🤖 ASK THE AGENT    /explain container queries · /review landing/css/responsive.css
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

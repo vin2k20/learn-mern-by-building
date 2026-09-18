@@ -1,0 +1,43 @@
+name: 🧪 Lab test problem
+description: A lab test seems wrong, too strict, too weak, or flaky
+title: "[lab NN]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tests are the specification, so please be precise. Describe the **behaviour** rather than pasting your full solution.
+        If you must share code, put it in a collapsed `<details>` block.
+  - type: input
+    id: lab
+    attributes:
+      label: Lab and test name
+      placeholder: "Lab 06 · functional utilities › debounce › leading + trailing: fires on both edges…"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem?
+      options:
+        - The test contradicts the instructions
+        - The test rejects a correct implementation
+        - The test accepts an incorrect implementation (too weak)
+        - The test is flaky (sometimes passes, sometimes fails)
+        - The test suite crashes on load
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: The input, the expected behaviour (with a reference to the instructions or MDN), the actual output, and how often it happens if it's flaky.
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "Windows 11, Node v24.21.0, run with: npm run test:06"
+    validations:
+      required: true

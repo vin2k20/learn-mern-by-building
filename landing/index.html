@@ -1,0 +1,81 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+📄 landing/index.html · Phase 1 · Day 6 · ★ core
+═══════════════════════════════════════════════════════════════════════════════
+🎯 GOAL
+  Write the complete semantic structure of the Kanvas landing page, WITHOUT any styling yet.
+  Viewed unstyled, it should still read like a well-organised document.
+
+🧠 CONCEPTS  → docs/concepts/web/accessibility.md, docs/concepts/css/responsive-images-units.md
+  document outline & landmarks · headings hierarchy · forms & native validation ·
+  <picture>/srcset · <details> · meta tags for SEO & social · resource hints
+
+🧩 USED BY  css/*.css (class names you choose here) · js/main.js (ids/data attributes you add here)
+
+📝 STEPS
+  1. <head>
+     - <!doctype html>, <html lang="en">, <meta charset="utf-8">, the viewport meta
+     - <title> (≤ 60 chars) and <meta name="description"> (≤ 155 chars)
+     - Open Graph tags (og:title, og:description, og:type) ☆
+     - <meta name="theme-color"> for light AND dark (use the media attribute)
+     - <meta name="color-scheme" content="light dark">
+     - Stylesheets in cascade order: base.css, layout.css, components.css, responsive.css, animations.css
+       (the order matters less once you use @layer. Why? Write the answer in a comment.)
+     - A tiny inline <script> that sets document.documentElement.dataset.theme from localStorage
+       BEFORE the CSS paints (this prevents a flash of the wrong theme). Wrap it in try/catch.
+     - <script type="module" src="js/main.js"></script>
+  2. <a class="skip-link" href="#main">Skip to content</a> as the first element in <body>.
+  3. <header> containing:
+     - a logo link (<a href="/"> with an inline SVG plus the text "Kanvas")
+     - <nav aria-label="Primary"> with a <ul> of links to #features, #pricing, #faq
+     - a menu toggle <button aria-expanded="false" aria-controls="primary-nav"> (JS will wire it up)
+     - "Log in" (a link) and "Start free" (a link styled as a button)
+  4. <main id="main">
+     a. <section class="hero" aria-labelledby="hero-title">: <h1 id="hero-title">, a <p> lead, two CTAs,
+        and a decorative board mock-up: a <div aria-hidden="true"> with 3 "columns" and a few "cards"
+        (plain divs; CSS will animate them).
+     b. <section id="features" aria-labelledby="features-title">: an <h2>, then a <ul class="feature-grid">
+        of 6 <li><article> cards, each with an inline SVG icon (aria-hidden), an <h3> and a <p>.
+        Add style="--i: N" (0–5) to each card for staggered animation later.
+     c. <section class="steps">: an <h2> and an <ol> with 3 steps.
+     d. <section id="pricing">: an <h2>, a monthly/yearly toggle (a <fieldset> with two radio inputs + <legend>) ☆,
+        and 3 <article class="plan"> elements. Each has an <h3>, a price (<p><data value="499">₹499</data> / user / month</p>),
+        a <ul> of features, and a CTA. Mark the middle one as featured (data-featured="true") with a "Most popular" badge.
+     e. <section class="testimonials" aria-label="What teams say">: a track <ul> of 5 <li><figure> with
+        <blockquote> + <figcaption>. Duplicate the list items in a second aria-hidden="true" <ul> for a seamless marquee.
+     f. <section id="faq">: an <h2> and 5 <details><summary>Question</summary><p>Answer</p></details>.
+     g. <section id="contact">: <form novalidate> (JS will run the validation) with
+        - name (required, autocomplete="name"), email (type=email, required, autocomplete="email")
+        - topic <select> (required, with a disabled placeholder option)
+        - message <textarea> (required, minlength="20", maxlength="500") plus a live character counter <output>
+        - a consent checkbox (required)
+        - every field wrapped with its <label>; each has a <p class="field-error" id="…-error"> referenced by aria-describedby
+        - a submit <button> and a status region <p role="status" aria-live="polite">
+  5. <footer>: a <nav aria-label="Footer"> with a few links, a theme toggle <button aria-pressed>, and <small>© <span id="year"></span> Kanvas</small>.
+  6. ☆ Add a <picture> somewhere (e.g. a product screenshot in the "steps" section) with AVIF/WebP sources, a JPG fallback,
+     width/height, loading="lazy" and meaningful alt text.
+
+✅ DONE WHEN
+  [ ] The DevTools Accessibility tree shows the landmarks: banner, navigation (×2), main, contentinfo
+  [ ] The headings go h1 → h2 → h3 with no skipped levels (check with a headings extension or the Accessibility pane)
+  [ ] The page is readable and usable with CSS disabled
+  [ ] Every form control has a visible <label>; there are no "empty links" or "buttons without names"
+  [ ] It passes https://validator.w3.org/nu/ with no errors
+
+💡 HINTS
+  - Use a <button> for things that DO something and <a href> for things that GO somewhere.
+  - Don't put block-level content inside <p>. <data value> is for machine-readable values.
+
+⚠️ GOTCHAS
+  - Don't use headings for styling. Pick the level by structure, and style it with CSS.
+  - The duplicated marquee list must be aria-hidden so screen readers don't read it twice.
+
+🎤 INTERVIEW ANGLE
+  "Why semantic HTML?", "button vs link?", "how does srcset/sizes work?", "how do you prevent a theme flash?"
+
+🚀 STRETCH ☆  JSON-LD structured data (SoftwareApplication) · <link rel="preload"> for a hero font
+
+🤖 ASK THE AGENT
+  /explain html landmarks and headings · /review landing/index.html
+═══════════════════════════════════════════════════════════════════════════════
+-->

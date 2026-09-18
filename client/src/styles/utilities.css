@@ -1,0 +1,15 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/styles/utilities.css · Phase 3 · Day 3 · ★ core (10 min)
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🎯 GOAL  A small set of utility classes that sit in the highest layer.
+ *
+ * 📝 STEPS
+ *   .visually-hidden (screen-reader only) · .skip-link (visible on focus) · .truncate (a single-line ellipsis) ·
+ *   .line-clamp-2 (-webkit-line-clamp) · .sr-only-focusable · .text-muted · .mono ·
+ *   .kbd (a keyboard-key style for "⌘K" hints) · .scroll-shadow ☆ (scroll-driven shadows on overflow containers)
+ *
+ * ✅ DONE WHEN  [ ] .visually-hidden content is read by VoiceOver but takes no space
+ * 🎤 INTERVIEW ANGLE  "display: none vs visibility: hidden vs visually-hidden?"
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

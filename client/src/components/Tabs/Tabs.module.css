@@ -1,0 +1,6 @@
+/**
+ * 📄 client/src/components/Tabs/Tabs.module.css · ☆ stretch
+ * 📝 .list: a FLEX row with a bottom border and overflow-x: auto (scroll-snap on mobile) · .tab[aria-selected="true"]: an
+ *    underline indicator made with a ::after (animate transform: scaleX) · .panel: padding · :focus-visible rings.
+ * ☆ Animate the indicator sliding between tabs using a CSS variable (--indicator-x) set from JS, or View Transitions.
+ */

@@ -1,0 +1,14 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/features/activity/ActivityFeed.module.css · Phase 5 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📝 STEPS
+ *   1. .page: a GRID with rows auto 1fr and a fixed height, so the list container can scroll (VirtualList needs a bounded height)
+ *   2. .row: height: 56px (it MUST match rowHeight); a FLEX row with align-items: center and gap; a bottom border;
+ *      the message truncates with an ellipsis (.truncate), and the time is pushed to the end
+ *   3. content-visibility: auto; contain-intrinsic-size: 56px on the NAIVE list rows ☆. Measure it: how much does this
+ *      CSS-only optimisation help the naive version? (a great interview nugget)
+ *   4. The sentinel/loader row: a centred spinner
+ * ✅ DONE WHEN  [ ] The row height never changes (long messages truncate instead of wrapping)
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

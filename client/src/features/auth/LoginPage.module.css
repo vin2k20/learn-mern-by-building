@@ -1,0 +1,15 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/features/auth/LoginPage.module.css · Phase 4 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📝 STEPS
+ *   1. .page: display: grid; place-items: center; min-height: 100dvh; a subtle animated gradient backdrop
+ *      (@keyframes on a ::before pseudo-element's transform, which is cheap)
+ *   2. .card: width: min(100% - 2rem, 24rem); a GRID with gap; surface, radius-lg, shadow-3; animation: scale-in
+ *   3. .card[data-shake] → animation: shake 400ms (remove the attribute on animationend so it can replay)
+ *   4. .field: a GRID (label, then a control row). The password row is FLEX (input flex: 1, then the toggle button).
+ *   5. At ≥ 64rem ☆: a two-column split screen (a brand panel on the left) using grid-template-columns: 1fr 1fr
+ *   6. Reduced motion → no shake (show a red border flash instead)
+ * ✅ DONE WHEN  [ ] Centred at every size · the card never touches the screen edges on a 320px phone
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

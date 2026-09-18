@@ -1,0 +1,15 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/components/Toast/Toast.module.css · Phase 3 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📝 STEPS
+ *   1. .viewport: position: fixed; z-index: var(--z-toast); a FLEX column with gap.
+ *      mobile: top, full width · @media (min-width: 40rem): bottom-right, width 22rem, column-reverse
+ *   2. .toast: a GRID with areas "icon title close" "icon desc close"; surface, shadow-2, radius-md,
+ *      a left border coloured by [data-variant] (success, error, info)
+ *   3. [data-state="open"] → animation: slide-up (mobile: slide-down) with --ease-spring
+ *      [data-state="closing"] → fade-out + translateX(100%), which is faster than the enter animation
+ *   4. A progress bar ☆: a ::after element whose scaleX animates from 1 → 0 over var(--duration); animation-play-state paused on :hover
+ * ✅ DONE WHEN  [ ] The enter/exit animations run on the compositor (no paint flashing)
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

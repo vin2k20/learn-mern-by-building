@@ -1,0 +1,5 @@
+/**
+ * 📄 client/src/components/VirtualList/VirtualList.module.css · ★ core
+ * 📝 .scroller: overflow-y: auto; overscroll-behavior: contain; contain: strict (why does `contain` help performance?);
+ *    will-change: scroll-position is NOT needed (explain why) · :focus-visible ring · rows: a FLEX row with align-items: center
+ */

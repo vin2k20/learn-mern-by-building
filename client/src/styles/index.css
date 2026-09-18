@@ -1,0 +1,24 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/styles/index.css · Phase 3 · Day 3 · ★ core (5 min)
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🎯 GOAL  The single global stylesheet entry, imported once in main.jsx.
+ *
+ * 📝 STEPS
+ *   1. Declare the layer order FIRST:
+ *        @layer reset, tokens, base, layout, components, utilities, animations;
+ *   2. Import the partials INTO layers:
+ *        @import url('./reset.css') layer(reset);
+ *        @import url('./tokens.css') layer(tokens);
+ *        @import url('./layout.css') layer(layout);
+ *        @import url('./utilities.css') layer(utilities);
+ *        @import url('./animations.css') layer(animations);
+ *   3. @layer base { body, headings, links, :focus-visible, ::selection } (the same ideas as landing/css/base.css)
+ *   4. CSS Modules (*.module.css) are unlayered by default, so they WIN over all of the layers above. Is that what you want?
+ *      Discuss it in a comment. (Hint: component styles should beat base/layout; utilities are meant to override.
+ *      One option is wrapping module rules in `@layer components { }`.)
+ *
+ * ✅ DONE WHEN  [ ] DevTools → Styles shows the layer names next to the rules
+ * 🤖 ASK THE AGENT  /explain @import layer() cascade layers
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

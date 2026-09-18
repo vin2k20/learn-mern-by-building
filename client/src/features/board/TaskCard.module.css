@@ -1,0 +1,20 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/features/board/TaskCard.module.css · Phase 4 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📝 STEPS
+ *   1. .card: a GRID with areas "priority priority" "title title" "labels labels" "meta avatar"; gap; surface; radius-md;
+ *      shadow-1; cursor: grab; transition on box-shadow and transform
+ *   2. The priority chip colour comes from [data-priority="urgent"] → --chip: var(--color-danger), and so on
+ *   3. :focus-visible → a focus ring + a raised shadow
+ *   4. States:
+ *      [data-dragging] → opacity .5; cursor: grabbing  (set by useBoardDnD)
+ *      [data-grabbed]  → outline 2px solid primary; transform: rotate(-1.5deg) scale(1.02); a ⇅ icon via ::after
+ *      [data-just-moved] → animation: pop 300ms var(--ease-spring)
+ *   5. .title a: color inherit; no underline, but underline on hover and focus; line-clamp 3
+ *   6. .overdue → the danger colour + an icon (not colour-only)
+ *   7. @media (hover: hover) { .card:hover { box-shadow: var(--shadow-2) } }
+ *   8. Reduced motion → no rotate/scale, just the outline
+ * ✅ DONE WHEN  [ ] Every state is visually distinct without relying on colour alone
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

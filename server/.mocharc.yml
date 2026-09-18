@@ -1,0 +1,18 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# 📄 server/.mocharc.yml · Phase 7 · Day 7 · ★ core
+# ═══════════════════════════════════════════════════════════════════════════
+# 🎯 GOAL  Configure Mocha for the API tests (ESM, a root-hooks setup file, sensible timeouts).
+#
+# Two keys are pre-filled so `npm test` works from day one (Mocha can't parse a YAML file with no keys).
+#
+# 📝 STEPS: add the remaining keys yourself:
+#   require: 'test/setup.js'        # exports mochaHooks (a root hook plugin) that start/stop mongodb-memory-server
+#   exit: true                      # ☆ explain why you might need it (open handles) and why it can hide bugs
+#   reporter: spec
+#   node-option: ['env-file-if-exists=.env.test']   # ☆ test-specific env vars
+#
+# ✅ DONE WHEN  `npm test -w server` finds your test files and runs setup.js first
+# 🤖 ASK THE AGENT  /explain mocha root hook plugins
+# ═══════════════════════════════════════════════════════════════════════════
+spec: 'test/**/*.test.js'
+timeout: 20000   # the first run downloads a MongoDB binary; later runs are fast

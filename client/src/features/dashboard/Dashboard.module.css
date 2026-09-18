@@ -1,0 +1,22 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/features/dashboard/Dashboard.module.css · Phase 5 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🧠 CONCEPTS  → docs/concepts/css/grid.md, docs/concepts/css/media-and-container-queries.md
+ *
+ * 📝 STEPS
+ *   1. .grid (mobile): display: grid; gap: var(--space-5); grid-template-columns: 1fr;
+ *      grid-template-areas: "s1" "s2" "s3" "s4" "bars" "people" "burn";
+ *      Each block: .s1 { grid-area: s1 } … (or use a data-area attribute + attribute selectors)
+ *   2. @media (min-width: 48rem): grid-template-columns: repeat(2, 1fr);
+ *      grid-template-areas: "s1 s2" "s3 s4" "bars bars" "people people" "burn burn";
+ *   3. @media (min-width: 64rem): grid-template-columns: repeat(4, 1fr);
+ *      grid-template-areas: "s1 s2 s3 s4" "bars bars bars people" "burn burn burn burn";
+ *   4. ☆ Mobile alternative: the stat tiles as a horizontal scroll strip (a FLEX container with overflow-x and scroll-snap) instead of stacking
+ *   5. .tile: a GRID; the value uses var(--text-2xl) and font-variant-numeric: tabular-nums (so numbers don't jiggle during the count-up)
+ *   6. .chartCard: container-type: inline-size; aspect-ratio: 16 / 9 inside; min-height 16rem
+ *   7. .bar (people): transform-origin: left; transform: scaleX(var(--pct)); transition: transform var(--duration-slow) var(--ease-out)
+ *   8. The tiles enter with a staggered fade/slide-up (animation-delay: calc(var(--i) * 60ms))
+ * ✅ DONE WHEN  [ ] The same markup produces 3 different layouts with ONLY CSS changes
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

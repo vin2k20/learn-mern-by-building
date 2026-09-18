@@ -1,0 +1,28 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 labs/09-dom-events/playground/styles.css · Phase 2 · Day 2 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🎯 GOAL
+ *   A quick, clean layout for Quick Tasks. It's a warm-up for the bigger CSS on Day 6.
+ *
+ * 🧠 CONCEPTS  → docs/concepts/css/flexbox.md, docs/concepts/css/grid.md
+ *
+ * 📝 STEPS
+ *   1. :root custom properties: --bg, --surface, --text, --accent, --radius, --gap.
+ *   2. body: a system font stack, a max-width container centred with margin-inline: auto.
+ *   3. header form: display: flex; gap; flex-wrap: wrap. The input grows (flex: 1 1 12rem).
+ *   4. #board: display: grid; grid-template-columns: repeat(3, 1fr); gap.
+ *      Below 40rem → a single column (@media (max-width: 40rem)).
+ *   5. .task: flex row, align-items: center, justify-content: space-between. cursor: grab.
+ *      .task.done → line-through and muted colour. .task:focus-visible → a clear outline.
+ *   6. .dragging → opacity .5. .column.drop-target → a dashed outline and a tinted background.
+ *   7. New tasks animate in: @keyframes pop-in { from { transform: scale(.95); opacity: 0 } }
+ *      Honour @media (prefers-reduced-motion: reduce) by disabling it.
+ *   8. .visually-hidden: the standard screen-reader-only utility (clip-path, 1px size, and so on).
+ *
+ * ✅ DONE WHEN
+ *   [ ] Works at 360px and 1280px widths · [ ] Visible focus styles · [ ] No horizontal scroll on mobile
+ *
+ * 🤖 ASK THE AGENT  /explain visually-hidden vs display none · /review labs/09-dom-events/playground/styles.css
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

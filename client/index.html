@@ -1,0 +1,27 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+📄 client/index.html · Phase 3 · Day 3 · ★ core
+═══════════════════════════════════════════════════════════════════════════════
+🎯 GOAL
+  The single HTML page of the SPA. With Vite, index.html is the ENTRY POINT (not public/index.html as in CRA).
+
+🧠 CONCEPTS  → docs/concepts/tooling/bundlers-vite-webpack-cra.md, docs/concepts/js/modules.md
+
+📝 STEPS
+  1. The HTML5 boilerplate: <!doctype html>, <html lang="en">, charset, the viewport meta, <title>Kanvas</title>,
+     a meta description, and <link rel="icon" type="image/svg+xml" href="/favicon.svg"> (files in public/ are served from /)
+  2. <meta name="color-scheme" content="light dark"> and theme-color metas for light and dark.
+  3. A tiny inline <script> (NOT a module) that reads localStorage 'kanvas-theme' and sets
+     document.documentElement.dataset.theme before the first paint (wrap it in try/catch). Use the same key as ThemeContext.
+  4. <body>: <div id="root"></div>, plus a <noscript> message.
+  5. <script type="module" src="/src/main.jsx"></script>. Vite transforms this path in dev and rewrites it to a hashed bundle in the build.
+  6. ☆ <link rel="preconnect"> for any font CDN you use (or self-host the fonts).
+
+✅ DONE WHEN
+  [ ] `npm run dev` shows your root component · [ ] no theme flash when reloading in dark mode
+  [ ] View Source in the production build (`npm run preview`) shows the hashed asset URLs
+
+🎤 INTERVIEW ANGLE  "Why is index.html the entry in Vite?", "how do you avoid a flash of the wrong theme?"
+🤖 ASK THE AGENT    /explain vite index.html entry
+═══════════════════════════════════════════════════════════════════════════════
+-->

@@ -1,0 +1,44 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+📄 labs/09-dom-events/playground/index.html · Phase 2 · Day 2 · ★ core
+═══════════════════════════════════════════════════════════════════════════════
+🎯 GOAL
+  The static shell for "Quick Tasks": a 3-column mini board built with vanilla JS.
+  Serve it with `npm run serve:09` (ES modules don't load over file://).
+
+🧠 CONCEPTS  → docs/concepts/web/accessibility.md
+  semantic HTML · <template> elements · <dialog> · ES module scripts · data-* attributes
+
+📝 STEPS
+  1. Write a standard HTML5 document: <!doctype html>, lang="en", a charset meta,
+     a viewport meta, a <title>, and a link to styles.css.
+  2. <header>: an <h1>Quick Tasks</h1> and a <form id="new-task"> with
+     - a labelled text input (name="title", required, maxlength="80")
+     - a <select name="status"> with todo / in_progress / done options
+     - a submit button
+  3. <main id="board"> with three <section class="column" data-status="..."> elements.
+     Each has an <h2> (with a live count <span class="count">) and a <ul class="list">
+     that will hold the task items.
+  4. A <template id="task-template"> containing
+     <li class="task" draggable="true" tabindex="0"> with a title <span>, a "✓" toggle
+     button (data-action="toggle") and a "✕" delete button (data-action="delete").
+     Give both buttons aria-labels.
+  5. A <dialog id="confirm-dialog"> with the text "Delete this task?" and two buttons
+     (value="cancel" and value="confirm") inside a <form method="dialog">.
+  6. An aria-live="polite" region (<p id="announcer" class="visually-hidden">)
+     for screen-reader announcements ("Task moved to Done").
+  7. <script type="module" src="app.js"></script> at the end of <body> (or in <head> with defer semantics:
+     module scripts are deferred by default).
+
+✅ DONE WHEN
+  [ ] The page validates (https://validator.w3.org/nu/, or the DevTools Issues panel shows nothing)
+  [ ] Every form control has a <label>
+  [ ] Tabbing through the page follows a sensible order
+
+🎤 INTERVIEW ANGLE
+  "What does <template> do?", "defer vs async vs type=module", "why use <dialog>?"
+
+🤖 ASK THE AGENT
+  /explain script loading defer async module · /review labs/09-dom-events/playground
+═══════════════════════════════════════════════════════════════════════════════
+-->

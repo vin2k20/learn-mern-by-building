@@ -1,0 +1,15 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/features/whiteboard/WhiteboardPage.module.css · Phase 5 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📝 STEPS
+ *   1. .page: a GRID filling the viewport under the header: height: calc(100dvh - var(--header-h) - 2 * var(--space-5));
+ *      grid-template-rows: auto 1fr (the toolbar on top). Mobile (max-width: 47.99rem): grid-template-columns: auto 1fr (a rail).
+ *   2. .stage: position: relative; min-height: 0 (important in grid!); radius; overflow: hidden;
+ *      background: a dot-grid pattern made with radial-gradient (background-size 24px 24px)
+ *   3. canvas: display: block; width: 100%; height: 100%; touch-action: none;
+ *      cursors via [data-tool="pen"] { cursor: crosshair } · [data-tool="eraser"] { cursor: cell } · [data-tool="select"] { cursor: default }
+ *   4. The dark theme dot colour comes from a token
+ * ✅ DONE WHEN  [ ] The canvas area fills the space exactly (no scrollbars) at any size
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

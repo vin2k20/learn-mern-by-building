@@ -1,0 +1,54 @@
+name: 📝 Content problem
+description: A mistake, broken link, outdated API or confusing instruction in the learning material
+title: "[content]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping make the material better! Please don't include full solutions in issues.
+  - type: input
+    id: location
+    attributes:
+      label: Where?
+      description: The file path, plus the step or section if relevant
+      placeholder: client/src/features/board/TaskCard.jsx, step 3
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of problem
+      options:
+        - Factual mistake / wrong instruction
+        - Outdated API or package version
+        - Broken link or anchor
+        - Unclear or confusing wording
+        - Setup step fails on my OS
+        - Accessibility of the docs
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong?
+      description: What does the material say, and what actually happens? Paste the exact error output if there is one.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested fix (optional)
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: OS, `node -v`, `npm -v`, and the relevant package versions (`npm ls <pkg>`)
+      placeholder: macOS 15, Node v24.21.0, npm 11.19.0, vite 8.3.0
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the existing issues and docs/faq-troubleshooting.md
+          required: true

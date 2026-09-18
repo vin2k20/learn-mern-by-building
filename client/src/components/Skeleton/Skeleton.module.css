@@ -1,0 +1,6 @@
+/**
+ * 📄 client/src/components/Skeleton/Skeleton.module.css · ★ core
+ * 📝 .skeleton: display: block; width: var(--sk-w, 100%); height: var(--sk-h, 1em); radius;
+ *    background: a linear-gradient with background-size: 200% 100%; animation: shimmer 1.2s linear infinite (from styles/animations.css)
+ *    [data-variant="circle"] → border-radius: 50%; aspect-ratio: 1 · reduced motion → no animation, a static tint
+ */

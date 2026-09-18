@@ -1,0 +1,28 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# 📄 server/docker-compose.yml · Phase 8 · ☆ stretch
+# ═══════════════════════════════════════════════════════════════════════════
+# 🎯 GOAL  Run MongoDB (and optionally the API) with one command.
+#
+# 🧠 CONCEPTS  → docs/concepts/tooling/docker-basics.md
+#
+# 📝 STEPS: replace these comments with real YAML:
+#   services:
+#     mongo:
+#       image: mongo:7
+#       ports: ["27017:27017"]
+#       volumes: [mongo-data:/data/db]
+#       healthcheck: test with mongosh "db.adminCommand('ping')", interval 10s, retries 5
+#     api:
+#       build: { context: .., dockerfile: server/Dockerfile }
+#       env_file: .env
+#       environment: MONGO_URI=mongodb://mongo:27017/kanvas     ← the service name, not localhost!
+#       ports: ["4000:4000"]
+#       depends_on: { mongo: { condition: service_healthy } }
+#   volumes:
+#     mongo-data: {}
+#   ☆ Add a `client` service: build the Vite app and serve dist/ with nginx (SPA fallback: try_files $uri /index.html),
+#     and proxy /api to the api service.
+#
+# ✅ DONE WHEN  `docker compose -f server/docker-compose.yml up -d` → curl localhost:4000/health → 200
+# 🎤 INTERVIEW ANGLE  "How do containers talk to each other in Compose?", "volumes vs bind mounts?"
+# ═══════════════════════════════════════════════════════════════════════════

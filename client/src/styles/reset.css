@@ -1,0 +1,15 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/styles/reset.css · Phase 3 · Day 3 · ★ core (5 min)
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🎯 GOAL  A modern, minimal CSS reset (the same ideas as landing/css/base.css's reset layer).
+ *
+ * 📝 STEPS
+ *   box-sizing border-box on everything · margin: 0 · body min-height: 100dvh; line-height 1.5 ·
+ *   media elements display: block; max-width: 100% · form controls inherit the font ·
+ *   button { cursor: pointer } · ul[role="list"], ol[role="list"] { list-style: none } ·
+ *   #root { isolation: isolate } (a new stacking context for the app) · text-wrap: balance on headings
+ *
+ * 🎤 INTERVIEW ANGLE  "Normalize vs reset?", "why box-sizing: border-box?"
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

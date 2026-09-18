@@ -1,0 +1,13 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/features/projects/ProjectsPage.module.css · Phase 4 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📝 STEPS
+ *   1. .header: FLEX, wrap, space-between, gap. The search input grows (flex: 1 1 16rem) and stays ≤ 28rem.
+ *   2. .grid (or the global .auto-grid): repeat(auto-fill, minmax(min(16rem, 100%), 1fr)), gap var(--space-5)
+ *   3. .progress: a thin bar fixed under the header, animated with a keyframe that translates a gradient (an indeterminate loader)
+ *   4. .empty: GRID place-items: center, with a CSS-drawn illustration (a few rounded rectangles with a floating animation)
+ *   5. List items fade in with a stagger (style={{ '--i': index }} + animation-delay)
+ * ✅ DONE WHEN  [ ] The grid reflows smoothly; there's no content jump between the skeleton and the loaded state
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

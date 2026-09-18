@@ -1,0 +1,16 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/features/whiteboard/Toolbar.module.css · Phase 5 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📝 STEPS
+ *   1. .toolbar: display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); padding; surface; shadow-1
+ *   2. .group: a FLEX row separated by a divider (border-inline-start on + .group)
+ *   3. .tool[aria-pressed="true"]: a primary background, the contrast text colour, and an inset shadow
+ *   4. Swatches: appearance: none on the radio inputs; width/height 1.75rem; border-radius 50%; background from --swatch;
+ *      :checked → a ring (box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-primary))
+ *   5. MEDIA QUERY: @media (max-width: 47.99rem) → the toolbar becomes a vertical rail on the left side of the page
+ *      (flex-direction: column; the page grid switches to grid-template-columns: auto 1fr)
+ *   6. @media (pointer: coarse) → bigger hit targets (min 44px)
+ * ✅ DONE WHEN  [ ] A horizontal bar on desktop and a vertical rail on phones, with no overflow
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

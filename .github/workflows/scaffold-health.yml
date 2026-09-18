@@ -1,0 +1,33 @@
+# Repo health check for the ORIGINAL learn-mern-by-building repository.
+# Learners: this workflow is skipped in your copy (your files will contain real code, which is the point!).
+# Your own CI exercise is ci.yml (Phase 8).
+name: Scaffold health
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: scaffold-health-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    if: github.repository == 'vin2k20/learn-mern-by-building'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: labs/package-lock.json
+      - name: Install lab dependencies
+        run: npm ci
+        working-directory: labs
+      - name: Verify the scaffold (comment-only files, links, lab stubs fail with TODO)
+        run: node tools/verify-scaffold.mjs --run-labs

@@ -1,0 +1,34 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/styles/animations.css · Phase 3 (+ Day 6 polish) · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🎯 GOAL
+ *   A shared library of @KEYFRAMES and animation utility classes used by components
+ *   (Toast, Modal, Skeleton, Spinner, TaskCard, the drawer, dashboard tiles).
+ *
+ * 🧠 CONCEPTS  → docs/concepts/css/transitions-keyframes-animations.md
+ *
+ * 📝 STEPS: define these @keyframes (use only transform/opacity unless noted)
+ *   1. fade-in / fade-out
+ *   2. slide-up (toasts, 8px → 0) · slide-in-right (the drawer, translateX(100%) → 0) · slide-out-right
+ *   3. scale-in (the modal and palette: scale(.96) + opacity)
+ *   4. shimmer (skeleton: background-position; it's a paint, and that's an accepted trade-off. Why?)
+ *   5. spin (a spinner rotating 360deg)
+ *   6. pulse (a notification dot: scale + opacity)
+ *   7. shake (a login error: translateX sequence)
+ *   8. pop (a card dropped into a column: scale 1 → 1.03 → 1, using --ease-spring)
+ *   9. count-up helper ☆ (@property --num with syntax '<integer>' so a counter can animate via CSS counters)
+ *  10. Utility classes: .animate-fade-in, .animate-slide-up … using the duration and easing tokens, plus
+ *      [data-stagger] > * { animation-delay: calc(var(--i, 0) * 40ms) }
+ *  11. Reduced motion: under prefers-reduced-motion: reduce, disable the infinite animations (spin can stay but slow down)
+ *      and swap the slides for fades.
+ *
+ * ✅ DONE WHEN
+ *   [ ] Toast, Modal, Skeleton, Spinner and the drawer use these keyframes (not their own copies)
+ *   [ ] Paint flashing shows no repaints during slide/scale/fade
+ *
+ * 🎤 INTERVIEW ANGLE  "How do you build exit animations when React removes the element?"
+ *                     (Keep it mounted with a `leaving` state until animationend, or use <ViewTransition> in React 19.3.)
+ * 🤖 ASK THE AGENT    /explain @property animations · /review client/src/styles/animations.css
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

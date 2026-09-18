@@ -1,0 +1,31 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/styles/tokens.css · Phase 3 · Day 3 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🎯 GOAL
+ *   Every design token as a CSS custom property, for light and dark themes. Components must ONLY use these.
+ *
+ * 🧠 CONCEPTS  → docs/design/design-tokens.md, docs/concepts/css/css-architecture.md
+ *
+ * 📝 STEPS
+ *   1. :root { color-scheme: light dark; …all light tokens… }
+ *      Colours, status and priority colours, the type scale (clamp), font stacks, spacing, radius, shadows,
+ *      z-index, durations, easings, layout sizes (--header-h: 3.5rem; --sidebar-w: 16rem; --rail-w: 4.5rem; --column-w: 18rem)
+ *   2. Dark values in both places:
+ *        @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { … } }
+ *        :root[data-theme="dark"] { … }
+ *      Tip: avoid duplicating them by defining the dark palette once in a custom selector list:
+ *        :root[data-theme="dark"], :root:not([data-theme="light"]):where(…)  (research whether that works inside @media)
+ *   3. Motion tokens collapse under reduced motion:
+ *        @media (prefers-reduced-motion: reduce) { :root { --duration-fast: 0ms; --duration-base: 0ms; --duration-slow: 0ms; } }
+ *      (Components that use the tokens get reduced motion for free. Nice!)
+ *   4. Chart palette tokens for BarChartCanvas: --chart-1 … --chart-4 (read them from JS with getComputedStyle).
+ *
+ * ✅ DONE WHEN
+ *   [ ] Toggling data-theme on <html> in DevTools re-themes the whole app instantly
+ *   [ ] Every text/background pair meets 4.5:1 (spot-check with the DevTools contrast picker)
+ *
+ * 🎤 INTERVIEW ANGLE  "How do you build a themeable design system?"
+ * 🤖 ASK THE AGENT    /review client/src/styles/tokens.css
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

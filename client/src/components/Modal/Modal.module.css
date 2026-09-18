@@ -1,0 +1,16 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/components/Modal/Modal.module.css · Phase 3 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📝 STEPS
+ *   1. .dialog: border: none; padding: 0; radius-lg; shadow-3; width: min(100% - 2rem, var(--modal-w, 32rem))
+ *      [data-size="lg"] → --modal-w: 48rem · on mobile (max-width: 40rem) → a bottom sheet (margin-block-end: 0, full width)
+ *   2. .dialog::backdrop: a translucent background + backdrop-filter: blur(2px), fading in
+ *   3. Layout inside: a GRID with rows auto 1fr auto (header, scrollable body, sticky footer); max-height: 85dvh
+ *   4. Animations: .dialog[open] → animation: scale-in; the mobile bottom sheet → slide-up instead;
+ *      [data-state="closing"] → a reversed animation
+ *   5. ☆ @starting-style { .dialog[open] { opacity: 0; scale: .96 } } with transition + transition-behavior: allow-discrete
+ *      (a pure-CSS enter AND exit for dialogs. Compare it with the keyframes approach.)
+ * ✅ DONE WHEN  [ ] A bottom sheet on phones and a centred card on desktop
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

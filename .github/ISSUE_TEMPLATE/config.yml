@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: ❓ Question, or stuck on a step
+    url: https://github.com/vin2k20/learn-mern-by-building/discussions/categories/q-a
+    about: Ask in Discussions (Q&A). Please check docs/faq-troubleshooting.md first.
+  - name: 🎉 Show your build
+    url: https://github.com/vin2k20/learn-mern-by-building/discussions/categories/show-and-tell
+    about: Share your finished Kanvas (link your repo, but please don't paste full solutions).
+  - name: 📖 Getting started guide
+    url: https://github.com/vin2k20/learn-mern-by-building/blob/main/docs/getting-started.md
+    about: Setup instructions for macOS, Linux and Windows.

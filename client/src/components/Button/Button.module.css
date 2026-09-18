@@ -1,0 +1,15 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/components/Button/Button.module.css · Phase 3 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📝 STEPS
+ *   1. .button uses LOCAL custom properties: --btn-bg, --btn-fg, --btn-border, --btn-pad-x, --btn-h
+ *      display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--btn-h);
+ *      transition on background-color, transform, box-shadow (duration tokens)
+ *   2. Variant and size selectors ONLY change the custom properties ([data-variant="danger"] { --btn-bg: var(--color-danger) }).
+ *   3. States: :hover (color-mix darken), :active (translateY(1px)), :focus-visible (ring), :disabled / [aria-busy="true"] (opacity, cursor).
+ *   4. Hover styles only under @media (hover: hover).
+ *   5. The minimum touch target is 2.75rem tall for md/lg.
+ * ✅ DONE WHEN  [ ] Adding a new variant takes ONE rule
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

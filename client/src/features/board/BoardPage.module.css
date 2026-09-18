@@ -1,0 +1,21 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/features/board/BoardPage.module.css · Phase 4 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🧠 CONCEPTS  → docs/concepts/css/flexbox.md, docs/concepts/css/media-and-container-queries.md
+ *
+ * 📝 STEPS
+ *   1. .page: a GRID with rows auto 1fr (the toolbar, then the board) and height: calc(100dvh - var(--header-h))
+ *   2. .toolbar: FLEX, wrap, gap. The filters .cluster grows. The undo/redo group gets margin-inline-start: auto.
+ *   3. .board (FLEXBOX, horizontal):
+ *        display: flex; gap: var(--space-4); align-items: flex-start; overflow-x: auto; overscroll-behavior-x: contain;
+ *        padding-block-end: var(--space-4); scroll-padding-inline: var(--space-4);
+ *        scroll-snap-type: x mandatory   (mobile only; remove it at ≥ 64rem with a media query)
+ *   4. @media (min-width: 80rem): the columns stretch to fill the width instead of scrolling
+ *      (the Column CSS switches from flex: 0 0 var(--column-w) to flex: 1 1 0)
+ *   5. A drop-placeholder style shared with Column (.dropIndicator: a 2px primary line)
+ *   6. ☆ Scroll-driven shadows at the board edges to hint that there's more content (animation-timeline: scroll(inline))
+ *
+ * ✅ DONE WHEN  [ ] 360px: one column visible at a time with snapping · 1440px: all 4 columns fit
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

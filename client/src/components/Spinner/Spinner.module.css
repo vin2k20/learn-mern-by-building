@@ -1,0 +1,5 @@
+/**
+ * 📄 client/src/components/Spinner/Spinner.module.css · ★ core
+ * 📝 .spinner: inline-block; a width/height from [data-size]; border: 2px solid currentColor; border-inline-end-color: transparent;
+ *    border-radius: 50%; animation: spin 0.8s linear infinite · the delayed fade-in ☆ · reduced motion → a slower spin
+ */

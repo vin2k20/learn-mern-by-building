@@ -1,0 +1,15 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 client/src/features/board/Column.module.css · Phase 4 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📝 STEPS
+ *   1. .column: flex: 0 0 var(--column-w); scroll-snap-align: start; a GRID with rows auto 1fr auto; max-height: 100%;
+ *      background: var(--color-surface-2); radius-lg; padding
+ *   2. .list: a FLEX column with gap; overflow-y: auto; min-height: 4rem (so empty columns still accept drops)
+ *   3. The header: FLEX with gap; a status dot via ::before with background: var(--status-<id>) chosen by [data-status]
+ *   4. Drop feedback: .column[data-drag-over="true"] → an outline (2px dashed primary) + a tinted background, with a transition
+ *   5. .count: a pill badge · .empty: a dashed border and centred muted text
+ *   6. @media (min-width: 80rem) → flex: 1 1 0; min-width: 0
+ * ✅ DONE WHEN  [ ] A long column scrolls inside itself; the page doesn't grow
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

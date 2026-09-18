@@ -1,0 +1,57 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 landing/css/base.css · Phase 1 · Day 6 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🎯 GOAL
+ *   The foundation: cascade layers, a modern reset, design tokens (light and dark),
+ *   and fluid typography.
+ *
+ * 🧠 CONCEPTS  → docs/concepts/css/box-model-specificity-cascade-layers.md,
+ *               docs/concepts/css/css-architecture.md, docs/concepts/css/responsive-images-units.md,
+ *               docs/design/design-tokens.md
+ *
+ * 📝 STEPS
+ *   1. First line: declare the layer order
+ *        @layer reset, tokens, base, layout, components, utilities, animations;
+ *      Put the rules in this file inside @layer reset { … }, @layer tokens { … } and @layer base { … }.
+ *      Other files use their own layers.
+ *   2. @layer reset
+ *      - *, *::before, *::after { box-sizing: border-box; }
+ *      - remove the default margins, set body line-height to 1.5, -webkit-font-smoothing
+ *      - img, picture, svg, canvas { display: block; max-width: 100%; }
+ *      - input, button, textarea, select { font: inherit; }
+ *      - p, h1–h6 { overflow-wrap: break-word; }  ·  h1–h3 { text-wrap: balance; }
+ *   3. @layer tokens
+ *      - :root → every LIGHT token from docs/design/design-tokens.md (colour, type scale with clamp(),
+ *        spacing, radius, shadows, z-index, durations, easings) plus --content-max: 75rem
+ *      - dark values in TWO places:
+ *          @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { … } }
+ *          :root[data-theme="dark"] { … }
+ *        (the first respects the OS setting unless the user chose light; the second is the manual override)
+ *      - color-scheme: light dark (so form controls and scrollbars adapt)
+ *   4. @layer base
+ *      - body: background var(--color-bg), color var(--color-text), the font stack, font-size var(--text-md)
+ *      - h1 → var(--text-hero), h2 → var(--text-2xl), h3 → var(--text-lg); line-height 1.15 for headings
+ *      - a: colour var(--color-primary), text-underline-offset
+ *      - :focus-visible { outline: 3px solid var(--color-focus-ring); outline-offset: 2px; }
+ *      - ::selection with the primary colour
+ *      - scroll-behavior: smooth on :root, but ONLY inside @media (prefers-reduced-motion: no-preference)
+ *      - [id] { scroll-margin-top: 5rem; } so anchor jumps don't hide under the sticky header
+ *      - .skip-link: positioned off-screen, and visible on :focus
+ *      - .visually-hidden utility (screen-reader only)
+ *
+ * ✅ DONE WHEN
+ *   [ ] Switching the OS theme changes the colours; data-theme="light"/"dark" on <html> overrides it
+ *   [ ] The body text contrast is ≥ 4.5:1 in both themes (check in DevTools)
+ *   [ ] Headings scale smoothly from 360px to 1440px (no media queries needed for the type scale)
+ *
+ * 💡 HINTS  clamp(min, preferred-with-vw, max) · @layer name { } · :root:not([data-theme="light"])
+ *
+ * ⚠️ GOTCHAS
+ *   - Unlayered CSS beats layered CSS. Keep EVERYTHING in layers, or you'll wonder why a rule "doesn't apply".
+ *   - var() can't be used inside @media conditions.
+ *
+ * 🎤 INTERVIEW ANGLE  "What are cascade layers?", "how do you implement dark mode?", "rem vs em?"
+ * 🤖 ASK THE AGENT    /explain css cascade layers · /review landing/css/base.css
+ * ═══════════════════════════════════════════════════════════════════════════
+ */

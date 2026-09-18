@@ -1,0 +1,56 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# 📄 .github/workflows/ci.yml · Phase 8 · ☆ stretch (talk-through ★)
+# ═══════════════════════════════════════════════════════════════════════════
+# 🎯 GOAL
+#   A GitHub Actions pipeline that runs on every push and PR: labs tests, client lint/test/build,
+#   server tests, and ☆ Lighthouse CI against the built client.
+#
+# 🧠 CONCEPTS  → docs/concepts/tooling/ci-cd-github-actions.md, docs/phases/phase-8-devops-cicd.md
+#
+# 📝 STEPS: replace these comments with a real workflow
+#   1. name: CI
+#      on: push (branches: [main]) and pull_request
+#      concurrency: group ci-${{ github.ref }}, cancel-in-progress: true
+#      permissions: contents: read        ← least privilege
+#   2. job `labs` (runs-on: ubuntu-latest)
+#      - actions/checkout (check the current major version)
+#      - actions/setup-node with node-version-file: .nvmrc, cache: npm, cache-dependency-path: labs/package-lock.json
+#      - run: npm ci        (working-directory: labs)
+#      - run: npm test      (working-directory: labs)
+#      ⚠️ The labs will be RED until you finish them. Options: a matrix over the completed labs only, or `continue-on-error: true`
+#         for now. Explain your choice in a comment.
+#   3. job `client`
+#      - checkout → setup-node (cache: npm, cache-dependency-path: package-lock.json at the root, since it's a workspace)
+#      - npm ci  (at the root: it installs all the workspaces)
+#      - npm run lint -w client
+#      - npm run test:run -w client
+#      - npm run build -w client
+#      - actions/upload-artifact: name client-dist, path client/dist
+#   4. job `server`
+#      - the same setup · npm test -w server
+#      - (mongodb-memory-server downloads a binary. ☆ Cache ~/.cache/mongodb-binaries with actions/cache,
+#        OR use `services: mongo: image: mongo:7` and a MONGO_URI env. Compare the two.)
+#   5. ☆ job `lighthouse` (needs: client)
+#      - download the client-dist artifact → npx @lhci/cli autorun with a lighthouserc.json at the root, e.g.:
+#        { "ci": { "collect": { "staticDistDir": "client/dist" },
+#                  "assert": { "assertions": { "categories:performance": ["error", { "minScore": 0.9 }],
+#                                              "categories:accessibility": ["error", { "minScore": 0.95 }] } } } }
+#        (a SPA served from staticDistDir needs a route that works without the API: use the /login page URL)
+#   6. ☆ A deploy job on main only (if: github.ref == 'refs/heads/main') with `environment: production`: just echo the steps
+#      you WOULD run (build the image, push it to a registry, deploy the preview), since there's no real target.
+#   7. Branch protection: require the labs, client and server checks before merging (Settings → Branches).
+#
+# ✅ DONE WHEN  [ ] A PR shows the green checks · a lint error in the client fails the pipeline
+# 🎤 INTERVIEW ANGLE  "Walk me through your CI pipeline", "how do you keep CI fast?", "how do you gate performance?"
+# 🤖 ASK THE AGENT  /explain github actions caching and matrix · /review .github/workflows/ci.yml
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# ⬇️ PLACEHOLDER: a minimal valid workflow so GitHub doesn't report "invalid workflow file" if you push before Phase 8.
+#    It only runs when triggered manually. Replace EVERYTHING below with your real pipeline.
+name: CI (placeholder)
+on: workflow_dispatch
+jobs:
+  todo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "TODO - implement the CI pipeline described in the comments at the top of this file (Phase 8)"

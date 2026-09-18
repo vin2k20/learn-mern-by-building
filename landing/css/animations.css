@@ -1,0 +1,58 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 📄 landing/css/animations.css · Phase 1 · Day 6 · ★ core
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 🎯 GOAL
+ *   Tasteful motion with TRANSITIONS and @KEYFRAMES that only uses composited properties,
+ *   and that switches off for users who prefer reduced motion.
+ *
+ * 🧠 CONCEPTS  → docs/concepts/css/transitions-keyframes-animations.md, docs/concepts/web/rendering-pipeline.md
+ *
+ * 📝 STEPS (inside @layer animations { … })
+ *   1. Transitions (state changes)
+ *      - .btn: transition on background-color, transform and box-shadow (var(--duration-fast))
+ *      - .card (hover lift): transform + box-shadow (var(--duration-base), var(--ease-out))
+ *      - the header's background and shadow when [data-scrolled] (set by JS)
+ *      - the mobile nav panel: opacity + translate when [data-menu-open] toggles
+ *   2. @keyframes float { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+ *      → apply it to the hero mock-up cards with different animation-delay values so they drift independently
+ *   3. @keyframes gradient-shift → move background-position across a large gradient on the hero backdrop
+ *      (animate a pseudo-element with transform if you want it to stay composited)
+ *   4. @keyframes card-slide → one mock-up card slides from column 1 to column 2 and back (translateX),
+ *      in an infinite loop with pauses (use keyframe percentages for the pauses)
+ *   5. @keyframes pulse → the "Most popular" badge gently scales (1 → 1.06 → 1)
+ *   6. @keyframes marquee { to { transform: translateX(-50%) } }
+ *      → .marquee-track animation: marquee 30s linear infinite (the duplicated list makes -50% seamless)
+ *      → pause it on hover and focus-within: .marquee:is(:hover, :focus-within) .marquee-track { animation-play-state: paused }
+ *   7. Reveal on scroll (two approaches):
+ *      a. Progressive: [data-reveal] starts at opacity 0 / translateY(16px); when JS adds .is-visible it transitions in.
+ *         Stagger with transition-delay: calc(var(--i, 0) * 80ms)
+ *      b. ☆ Scroll-driven: inside @supports (animation-timeline: view()) use
+ *         animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% cover 30%;
+ *   8. The FAQ chevron rotates with a transition when details[open] changes.
+ *   9. Reduced motion (REQUIRED):
+ *      @media (prefers-reduced-motion: reduce) {
+ *        *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+ *                                 transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+ *        [data-reveal] { opacity: 1; transform: none; }
+ *      }
+ *
+ * ✅ DONE WHEN
+ *   [ ] DevTools → Rendering → Paint flashing shows NO green flashes during the marquee or floating animations
+ *   [ ] Performance panel: no layout events during the animations
+ *   [ ] Emulating prefers-reduced-motion: reduce stops everything, and the content is still visible
+ *   [ ] You used at least: 1 transition, 5 @keyframes, animation-delay, infinite + alternate/linear, fill-mode
+ *
+ * 💡 HINTS
+ *   - animation shorthand: name duration timing-function delay iteration-count direction fill-mode
+ *   - will-change: transform only on the marquee track (it animates forever)
+ *
+ * ⚠️ GOTCHAS
+ *   - Animating background-position triggers paint. That's acceptable for one hero backdrop, but know the cost.
+ *   - An infinite animation on many elements drains the battery. Pause it when it's off-screen (IntersectionObserver ☆).
+ *
+ * 🎤 INTERVIEW ANGLE  "Transition vs animation?", "which properties are cheap to animate and why?",
+ *                     "how do you respect reduced motion?"
+ * 🤖 ASK THE AGENT    /explain composited animations · /review landing/css/animations.css
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
